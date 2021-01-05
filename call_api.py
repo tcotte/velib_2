@@ -16,4 +16,4 @@ while True:
         #producer.send("velib", json.dumps(station).encode())
         producer.send("velib", key=json.dumps(station["number"]).encode(), value=json.dumps(station).encode())
     print("{} Produced {} station records".format(time.time(), len(stations)))
-    time.sleep(10)
+    time.sleep(60)
