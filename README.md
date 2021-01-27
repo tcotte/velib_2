@@ -10,3 +10,8 @@ intéressantes et les stockera dans le fichier **velib.csv**.
 ### Notes pour SparkStreaming 
 
 Lancer spark-submit avec la commande ->  spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.4.4 read_kafka.py  
+
+
+## Elastic search
+**csv file import**
+https://techexpert.tips/fr/elasticsearch-fr/elasticsearch-importation-dun-fichier-csv/
