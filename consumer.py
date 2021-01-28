@@ -17,12 +17,16 @@ for message in consumer:
     status = station["status"]
     last_update = station["last_update"]
 
+    latitude = station["position"]["lat"]
+    longitude = station["position"]["lng"]
+
     station_full = "Full" if available_bikes == capacity else "None"
     station_empty = "Empty" if available_bikes == 0 else "None"
 
     print(str(datetime.now().strftime("%m/%d/%Y %H:%M")), " -- ", last_update, " -- ",
           station_number, " -- ", available_bikes, " -- ",
-          non_available, " -- ", capacity, " -- ", station_full, " -- ", station_empty, " -- ", status)
+          non_available, " -- ", capacity, " -- ", station_full, " -- ", station_empty, " -- ", status, " -- ", latitude,
+          " -- ", longitude)
 
     data = [str(datetime.now().strftime("%m/%d/%Y %H:%M")), last_update,
             station_number, available_bikes, non_available, capacity, station_full, station_empty, status]

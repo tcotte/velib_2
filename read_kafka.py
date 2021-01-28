@@ -22,7 +22,8 @@ pairs = dks.map(lambda x: (int(x[0]), json.loads(x[1])))
 pairs_registered = pairs.map(lambda x: (x[0],
                                         [str(datetime.now().strftime("%m/%d/%Y %H:%M")), x[1].get("last_update"),
                                         x[1].get("number"), x[1].get("available_bike_stands"),
-                                        x[1].get('available_bikes'), x[1].get('bike_stands'), x[1].get('status')]))
+                                        x[1].get('available_bikes'), x[1].get('bike_stands'), x[1].get('status')
+                                         ]))
 
 pairs_registered.pprint()
 

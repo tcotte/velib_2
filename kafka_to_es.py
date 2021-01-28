@@ -14,14 +14,14 @@ import json  # Spark context details
 
 
 def process_stream(record, spark):
-    columns = ["Station", "Date", "Last update", "Places", "Available_bikes", "Capacity", "Status"]
+    columns = ["Station", "Date", "Last update", "Places", "Available_bikes", "Capacity", "Status", "Latitude", "Longitude"]
     if not record.isEmpty():
         df = spark.createDataFrame(record, columns)
         df.show()
         df.write.format(
             'org.elasticsearch.spark.sql'
         ).mode(
-            'overwrite' # or .mode('append')
+            'append' # or .mode('append')
         ).option(
             'es.nodes', 'localhost'
         ).option(
@@ -42,7 +42,8 @@ pairs = dks.map(lambda x: (int(x[0]), json.loads(x[1])))
 pairs_registered = pairs.map(lambda x: (x[0],
                                         str(datetime.now().strftime("%m/%d/%Y %H:%M")), x[1].get("last_update"),
                                         x[1].get("available_bike_stands"),
-                                        x[1].get('available_bikes'), x[1].get('bike_stands'), x[1].get('status')))
+                                        x[1].get('available_bikes'), x[1].get('bike_stands'), x[1].get('status'), x[1].get('position').get('lat'),
+                                        x[1].get('position').get('lng')))
 
 pairs_registered.foreachRDD(lambda rdd: process_stream(rdd, spark))
 # new_rdd = pairs_registered.map(json.dumps).map(lambda x: ('key', x))
