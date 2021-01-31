@@ -25,8 +25,7 @@ for message in consumer:
 
     print(str(datetime.now().strftime("%m/%d/%Y %H:%M")), " -- ", last_update, " -- ",
           station_number, " -- ", available_bikes, " -- ",
-          non_available, " -- ", capacity, " -- ", station_full, " -- ", station_empty, " -- ", status, " -- ", latitude,
-          " -- ", longitude)
+          non_available, " -- ", capacity, " -- ", station_full, " -- ", station_empty, " -- ", status, " -- ", (latitude, longitude))
 
     data = [str(datetime.now().strftime("%m/%d/%Y %H:%M")), last_update,
             station_number, available_bikes, non_available, capacity, station_full, station_empty, status]

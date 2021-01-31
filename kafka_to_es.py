@@ -2,6 +2,7 @@
 import findspark
 import json
 from datetime import datetime
+from pyspark.sql import functions as F
 
 findspark.init('/home/bigdata/spark-2.4.3-bin-hadoop2.7')
 import pyspark
@@ -14,20 +15,21 @@ import json  # Spark context details
 
 
 def process_stream(record, spark):
-    columns = ["Station", "Date", "Last update", "Places", "Available_bikes", "Capacity", "Status", "Latitude", "Longitude"]
+    columns = ["Station", "Date", "Last update", "Places", "Available_bikes", "Capacity", "Status", "Position"]
     if not record.isEmpty():
         df = spark.createDataFrame(record, columns)
+        df = df.filter(df["Station"] < 1000) # delete 1,033 station which is not in Toulouse
         df.show()
         df.write.format(
             'org.elasticsearch.spark.sql'
         ).mode(
-            'append' # or .mode('append')
+            'overwrite' # or .mode('append')
         ).option(
             'es.nodes', 'localhost'
         ).option(
             'es.port', 9200
         ).option(
-            'es.resource', '%s/%s' % ('velib', 'count'),
+            'es.resource', '%s/%s' % ('velotoulouse-geo', '_doc'),
         ).save()
 
 
@@ -42,24 +44,11 @@ pairs = dks.map(lambda x: (int(x[0]), json.loads(x[1])))
 pairs_registered = pairs.map(lambda x: (x[0],
                                         str(datetime.now().strftime("%m/%d/%Y %H:%M")), x[1].get("last_update"),
                                         x[1].get("available_bike_stands"),
-                                        x[1].get('available_bikes'), x[1].get('bike_stands'), x[1].get('status'), x[1].get('position').get('lat'),
-                                        x[1].get('position').get('lng')))
+                                        x[1].get('available_bikes'), x[1].get('bike_stands'), x[1].get('status'), str(x[1].get('position').get('lat'))+","+
+                                        str(x[1].get('position').get('lng'))))
 
 pairs_registered.foreachRDD(lambda rdd: process_stream(rdd, spark))
-# new_rdd = pairs_registered.map(json.dumps).map(lambda x: ('key', x))
-# new_rdd.pprint()
-# new_rdd.foreachRDD(lambda rdd: rdd.saveAsNewAPIHadoopFile(
-#     path='-',
-#     outputFormatClass="org.elasticsearch.hadoop.mr.EsOutputFormat",
-#     keyClass="org.apache.hadoop.io.NullWritable",
-#     valueClass="org.elasticsearch.hadoop.mr.LinkedMapWritable",
-#     conf={
-#         "es.nodes" : 'localhost',
-#         "es.port" : '9200',
-#         "es.resource" : '%s/%s' % ('index_name', 'doc_type_name'),
-#         "es.input.json": 'true'
-#     }
-# ))
+
 
 ssc.start()
 ssc.awaitTermination()
