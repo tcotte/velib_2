@@ -25,9 +25,8 @@ def process_stream(record, spark):
 
 sc = SparkContext(appName="PythonSparkStreamingKafka")
 spark = SparkSession(sc)
-ssc = StreamingContext(sc, 1*30)  # Creating Kafka direct stream
-dks = KafkaUtils.createDirectStream(ssc, ["velib"],
-                                    {"metadata.broker.list": "localhost:9092"}).window(600*30, 60*30) # Get 10 last samples all 30 minutes
+ssc = StreamingContext(sc, 60*30)
+dks = KafkaUtils.createDirectStream(ssc, ["velopredict"], {"metadata.broker.list": "localhost:9092"}).window(300*60, 30*60) # Get 10 last samples all 30 minutes
 
 pairs = dks.map(lambda x: (int(x[0]), json.loads(x[1])))
 
