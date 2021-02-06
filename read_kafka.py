@@ -12,7 +12,7 @@ from pyspark.streaming.kafka import KafkaUtils
 import json  # Spark context details
 
 sc = SparkContext(appName="PythonSparkStreamingKafka")
-ssc = StreamingContext(sc, 6)  # Creating Kafka direct stream
+ssc = StreamingContext(sc, 2)  # Creating Kafka direct stream
 dks = KafkaUtils.createDirectStream(ssc, ["velib"],
                                     {"metadata.broker.list": "localhost:9092"})
 

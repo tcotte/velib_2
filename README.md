@@ -15,3 +15,37 @@ Lancer spark-submit avec la commande ->  spark-submit --packages org.apache.spar
 ## Elastic search
 **csv file import**
 https://techexpert.tips/fr/elasticsearch-fr/elasticsearch-importation-dun-fichier-csv/
+
+---
+### Launch zookeeper
+```
+./bin/zookeeper-server-start.sh ./config/zookeeper.properties
+```
+
+### Launch Kafka
+```
+./bin/kafka-server-start.sh ./config/server.properties
+```
+
+### Call API 
+```
+python3 call_apy.py
+```
+
+### Consumer
+```
+python3 producer_predict.py
+spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.4.4 kafka_to_df.py
+```
+
+### Kafka to es
+```
+spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.4.4 --jars ../elasticsearch-hadoop-7.10.2.jar --driver-class-path ../elasticsearch-hadoop-7.10.2.j
+ar kafka_to_es.py
+```
+
+### Prediction
+```
+spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.4.4 --jars ../elasticsearch-hadoop-7.10.2.jar --driver-class-path ../elasticsearch-hadoop-7.10.2.j
+ar prediction.py
+```

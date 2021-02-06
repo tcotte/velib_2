@@ -2,3 +2,7 @@ elasticsearch-hadoop-7.10.2.jar
 kibana-7.10.2-linux-x86_64
 test_es.py
 .idea/
+csv.conf
+OLD
+
+
