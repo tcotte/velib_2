@@ -15,18 +15,18 @@ from pyspark.sql import SparkSession
 import json  # Spark context details
 
 
-def send_to_es(df):
-    df.write.format(
-        'org.elasticsearch.spark.sql'
-    ).mode(
-        'overwrite'  # or .mode('append')
-    ).option(
-        'es.nodes', 'localhost'
-    ).option(
-        'es.port', 9200
-    ).option(
-        'es.resource', '%s/%s' % ('velotoulouse-window', '_doc'),
-    ).save()
+# def send_to_es(df):
+#     df.write.format(
+#         'org.elasticsearch.spark.sql'
+#     ).mode(
+#         'overwrite'  # or .mode('append')
+#     ).option(
+#         'es.nodes', 'localhost'
+#     ).option(
+#         'es.port', 9200
+#     ).option(
+#         'es.resource', '%s/%s' % ('velotoulouse-window', '_doc'),
+#     ).save()
 
 
 def process_stream(record, spark):
