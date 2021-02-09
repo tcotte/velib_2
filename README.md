@@ -1,3 +1,6 @@
+<img src="https://can7.fr/images/inp-enseeiht.jpg" width=350, style="max-width: 110px; display: inline" alt="Python"/>
+<img src="https://projet3.roxanerg.com/images/logo/logo.png" width=150 style="max-width: 40px; display: inline" alt="TensorFlow"/>
+
 # VélôToulouse
 ---
 ### Objectifs
@@ -80,7 +83,7 @@ python predictions/producer_predict.py      # pour l'application de prédiction
 ### Application en temps réel
 
 <p align="center">
-  <img src="images/application_real_time.png" width="250" title="hover text">
+  <img src="images/application_real_time.png" width="350" title="hover text">
 </p>
 
 Maintenant que le producer est activé, nous allons utiliser l'application Spark Streaming pour pouvoir envoyer les données 
@@ -119,7 +122,7 @@ mappée au type "geo-point".
 ### Application de prédiction
 
 <p align="center">
-  <img src="images/application_prediction.png" width="650" title="hover text">
+  <img src="images/application_prediction.png" width="750" title="hover text">
 </p>
 Les blocs de cette application sont détaillés plus bas.
 
@@ -164,6 +167,7 @@ Nous avons créées nos propres dashboards contenant du *Kibana Query Langage* n
 qui sont pleines et vides. Nous vous proposons ces dashboards qui se raffraîchissent automatiquement toutes les minutes
 dans le dossier "dashboards". Vous n'avez plus qu'à les importer dans Kibana et visualiser quel vélo vous pourrez prendre 
 dans 30 minutes.
+<br>
 <br>
 
 <p align="center">
