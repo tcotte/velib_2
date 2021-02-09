@@ -84,15 +84,10 @@ while True:
 
     station = [int(i) for i in get_stations()]
     capacity = sorted_capacities(get_stations())
-    # print(str(station))
-    # print(len(station))
 
     data = list(zip(station, yhat, sorted_positions(get_stations()), capacity, full_station(yhat, capacity)))
     df = spark.createDataFrame(data, ["Station", "Available_bikes", "Position", "Capacity", "Full"])
 
-    # columns = ["Station", "Available_bikes"]
-
-    # df = spark.createDataFrame(pairs_predicted, columns)
     df.show()
     df.write.format(
         'org.elasticsearch.spark.sql'
@@ -106,4 +101,4 @@ while True:
         'es.resource', '%s/%s' % ('velotoulouse-predictions', '_doc'),
     ).save()
 
-    time.sleep(30*60)
+    time.sleep(30 * 60)

@@ -30,7 +30,7 @@ df = spark \
     .readStream \
     .format("kafka") \
     .option("kafka.bootstrap.servers", "localhost:9092") \
-    .option("subscribe", "velib") \
+    .option("subscribe", "velopredict") \
     .load() \
     .selectExpr("CAST(value AS STRING)") \
 

@@ -14,28 +14,12 @@ from pyspark.streaming.kafka import KafkaUtils
 from pyspark.sql import SparkSession
 import json  # Spark context details
 
-
-# def send_to_es(df):
-#     df.write.format(
-#         'org.elasticsearch.spark.sql'
-#     ).mode(
-#         'overwrite'  # or .mode('append')
-#     ).option(
-#         'es.nodes', 'localhost'
-#     ).option(
-#         'es.port', 9200
-#     ).option(
-#         'es.resource', '%s/%s' % ('velotoulouse-window', '_doc'),
-#     ).save()
-
-
 def process_stream(record, spark):
     columns = ["Station", "Date", "Available_bikes"]
     if not record.isEmpty():
         df = spark.createDataFrame(record, columns)
         df = df.filter(df["Station"] < 1000)  # delete 1,033 station which is not in Toulouse
         df.show()
-        # send_to_es(df)
         # Write in CSV file
         df.toPandas().to_csv("dataframe_streaming.csv", index=False, header=True)
 

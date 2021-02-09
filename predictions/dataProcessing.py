@@ -10,13 +10,8 @@ from datetime import datetime
 # Parameters
 interval = 30  # interval en minutes
 
-# !git clone https://github.com/tcotte/Velib.git
-
 df1 = pd.read_csv("../Velib/velib_clean1.csv")
 df2 = pd.read_csv("../Velib/velib_clean2.csv")
-
-
-# print(df1.columns)
 
 # list stations
 def get_stations():
@@ -92,7 +87,7 @@ for s in stations:
     update["date"] = pd.to_datetime(update['date'], format="%m/%d/%Y %H:%M")
     updates.append(update)
 
-# Create un DF, une ligne toute les 30min avec nbre de bikes par station
+# Creation d'un DF, une ligne toute les 30min avec nbre de bikes par station
 time_list = []
 bikes_list = []
 s_list = []
@@ -114,4 +109,4 @@ for s in range(len(stations)):
 data = {"station_id": s_list, "date": time_list, "available bikes": bikes_list}
 new_df = pd.DataFrame(data=data)
 
-new_df.to_csv("../filtered_velib_clean.csv")  # ? Velib/ or not
+new_df.to_csv("../filtered_velib_clean.csv")

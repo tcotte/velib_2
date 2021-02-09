@@ -1,0 +1,126 @@
+{
+  "version": "7.10.2",
+  "objects": [
+    {
+      "id": "c4f1bc00-686e-11eb-9cdb-358efc8c25af",
+      "type": "dashboard",
+      "namespaces": [
+        "default"
+      ],
+      "updated_at": "2021-02-06T11:30:52.480Z",
+      "version": "WzMzMTYsMTNd",
+      "attributes": {
+        "title": "Dashboard map Toulouse",
+        "hits": 0,
+        "description": "",
+        "panelsJSON": "[{\"version\":\"7.10.2\",\"gridData\":{\"x\":0,\"y\":0,\"w\":24,\"h\":15,\"i\":\"27f94b25-f0f3-4f71-8776-968267f49748\"},\"panelIndex\":\"27f94b25-f0f3-4f71-8776-968267f49748\",\"embeddableConfig\":{\"isLayerTOCOpen\":false,\"openTOCDetails\":[],\"mapCenter\":{\"lat\":43.6024,\"lon\":1.43245,\"zoom\":11.7},\"hiddenLayers\":[\"770d0f46-c93c-4bff-8079-b2a16427abc1\",\"f3d0936d-e1ca-4d93-b4d0-49db4de747ae\",\"99d9e558-a633-445f-8563-4a4177650d16\"],\"title\":\"Map Toulouse bike real-time\",\"hidePanelTitles\":false},\"title\":\"Map Toulouse bike real-time\",\"panelRefName\":\"panel_0\"},{\"version\":\"7.10.2\",\"gridData\":{\"x\":24,\"y\":0,\"w\":24,\"h\":15,\"i\":\"7b57fbdc-2365-4b61-916e-75a8c6ff9cae\"},\"panelIndex\":\"7b57fbdc-2365-4b61-916e-75a8c6ff9cae\",\"embeddableConfig\":{\"isLayerTOCOpen\":false,\"openTOCDetails\":[],\"mapCenter\":{\"lat\":43.6024,\"lon\":1.43245,\"zoom\":11.7},\"hiddenLayers\":[\"890aeeaa-9d20-4cb8-85b3-c0fef74135c3\",\"57683ad9-de9d-40d9-bacc-a1909bf4c1ac\",\"4f82af9c-dd30-4d6b-8c37-450dff7f26e8\"],\"title\":\"Map Toulouse bike predictions\",\"hidePanelTitles\":false},\"title\":\"Map Toulouse bike predictions\",\"panelRefName\":\"panel_1\"}]",
+        "optionsJSON": "{\"useMargins\":true,\"hidePanelTitles\":false}",
+        "version": 1,
+        "timeRestore": false,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+        }
+      },
+      "references": [
+        {
+          "name": "panel_0",
+          "type": "map",
+          "id": "901263c0-63ca-11eb-97f1-c3c76196e867"
+        },
+        {
+          "name": "panel_1",
+          "type": "map",
+          "id": "901263c0-63ca-11eb-97f1-c3c76196e867"
+        }
+      ],
+      "migrationVersion": {
+        "dashboard": "7.9.3"
+      }
+    },
+    {
+      "id": "901263c0-63ca-11eb-97f1-c3c76196e867",
+      "type": "map",
+      "namespaces": [
+        "default"
+      ],
+      "updated_at": "2021-02-08T14:06:52.252Z",
+      "version": "WzM5MzQsMTRd",
+      "attributes": {
+        "title": "Map Toulouse bike",
+        "description": "",
+        "mapStateJSON": "{\"zoom\":11.75,\"center\":{\"lon\":1.50641,\"lat\":43.60368},\"timeFilters\":{\"from\":\"now/d\",\"to\":\"now/d\"},\"refreshConfig\":{\"isPaused\":true,\"interval\":0},\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filters\":[],\"settings\":{\"autoFitToDataBounds\":false,\"initialLocation\":\"LAST_SAVED_LOCATION\",\"fixedLocation\":{\"lat\":0,\"lon\":0,\"zoom\":2},\"browserLocation\":{\"zoom\":2},\"maxZoom\":24,\"minZoom\":0,\"showSpatialFilters\":true,\"spatialFiltersAlpa\":0.3,\"spatialFiltersFillColor\":\"#DA8B45\",\"spatialFiltersLineColor\":\"#DA8B45\"}}",
+        "layerListJSON": "[{\"sourceDescriptor\":{\"type\":\"EMS_TMS\",\"isAutoSelect\":true},\"id\":\"306207e1-fe23-40f8-94b2-f2d6e0af17fc\",\"label\":null,\"minZoom\":0,\"maxZoom\":24,\"alpha\":0.7,\"visible\":true,\"style\":{\"type\":\"TILE\"},\"type\":\"VECTOR_TILE\"},{\"sourceDescriptor\":{\"geoField\":\"Position\",\"filterByMapBounds\":true,\"scalingType\":\"LIMIT\",\"topHitsSize\":1,\"id\":\"6fd11970-89eb-41b1-8481-96a5f18b7d67\",\"type\":\"ES_SEARCH\",\"tooltipProperties\":[],\"sortField\":\"\",\"sortOrder\":\"desc\",\"indexPatternRefName\":\"layer_1_source_index_pattern\"},\"id\":\"890aeeaa-9d20-4cb8-85b3-c0fef74135c3\",\"label\":null,\"minZoom\":0,\"maxZoom\":24,\"alpha\":0.75,\"visible\":true,\"style\":{\"type\":\"VECTOR\",\"properties\":{\"icon\":{\"type\":\"STATIC\",\"options\":{\"value\":\"marker\"}},\"fillColor\":{\"type\":\"DYNAMIC\",\"options\":{\"color\":\"Blue to Red\",\"colorCategory\":\"palette_0\",\"field\":{\"name\":\"Status.keyword\",\"origin\":\"source\"},\"fieldMetaOptions\":{\"isEnabled\":true,\"sigma\":3},\"type\":\"CATEGORICAL\",\"useCustomColorPalette\":false,\"useCustomColorRamp\":false}},\"lineColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#41937c\"}},\"lineWidth\":{\"type\":\"STATIC\",\"options\":{\"size\":1}},\"iconSize\":{\"type\":\"STATIC\",\"options\":{\"size\":6}},\"iconOrientation\":{\"type\":\"STATIC\",\"options\":{\"orientation\":0}},\"labelText\":{\"type\":\"DYNAMIC\",\"options\":{\"field\":{\"label\":\"Available_bikes\",\"name\":\"Available_bikes\",\"origin\":\"source\",\"type\":\"number\",\"supportsAutoDomain\":true}}},\"labelColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#000000\"}},\"labelSize\":{\"type\":\"STATIC\",\"options\":{\"size\":14}},\"labelBorderColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#FFFFFF\"}},\"symbolizeAs\":{\"options\":{\"value\":\"icon\"}},\"labelBorderSize\":{\"options\":{\"size\":\"SMALL\"}}},\"isTimeAware\":true},\"type\":\"VECTOR\",\"joins\":[],\"query\":{\"query\":\"Available_bikes > 0 and Places > 0\",\"language\":\"kuery\"}},{\"sourceDescriptor\":{\"geoField\":\"Position\",\"filterByMapBounds\":true,\"scalingType\":\"CLUSTERS\",\"topHitsSize\":1,\"id\":\"cab525d8-03cc-4721-8181-33be330aa52c\",\"type\":\"ES_SEARCH\",\"tooltipProperties\":[],\"sortField\":\"\",\"sortOrder\":\"desc\",\"indexPatternRefName\":\"layer_2_source_index_pattern\"},\"id\":\"57683ad9-de9d-40d9-bacc-a1909bf4c1ac\",\"label\":null,\"minZoom\":0,\"maxZoom\":24,\"alpha\":0.75,\"visible\":true,\"style\":{\"type\":\"VECTOR\",\"properties\":{\"icon\":{\"type\":\"STATIC\",\"options\":{\"value\":\"marker\"}},\"fillColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#943535\"}},\"lineColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#a53232\"}},\"lineWidth\":{\"type\":\"STATIC\",\"options\":{\"size\":1}},\"iconSize\":{\"type\":\"STATIC\",\"options\":{\"size\":6}},\"iconOrientation\":{\"type\":\"STATIC\",\"options\":{\"orientation\":0}},\"labelText\":{\"type\":\"DYNAMIC\",\"options\":{\"field\":{\"label\":\"Available_bikes\",\"name\":\"Available_bikes\",\"origin\":\"source\",\"type\":\"number\",\"supportsAutoDomain\":true}}},\"labelColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#000000\"}},\"labelSize\":{\"type\":\"STATIC\",\"options\":{\"size\":14}},\"labelBorderColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#FFFFFF\"}},\"symbolizeAs\":{\"options\":{\"value\":\"icon\"}},\"labelBorderSize\":{\"options\":{\"size\":\"SMALL\"}}},\"isTimeAware\":true},\"type\":\"BLENDED_VECTOR\",\"joins\":[],\"query\":{\"query\":\"Available_bikes : 0\",\"language\":\"kuery\"}},{\"sourceDescriptor\":{\"geoField\":\"Position\",\"filterByMapBounds\":true,\"scalingType\":\"CLUSTERS\",\"topHitsSize\":1,\"id\":\"d0a3cce4-a285-4629-aec1-c66ece1df3ab\",\"type\":\"ES_SEARCH\",\"tooltipProperties\":[],\"sortField\":\"\",\"sortOrder\":\"desc\",\"indexPatternRefName\":\"layer_3_source_index_pattern\"},\"id\":\"4f82af9c-dd30-4d6b-8c37-450dff7f26e8\",\"label\":null,\"minZoom\":0,\"maxZoom\":24,\"alpha\":0.75,\"visible\":true,\"style\":{\"type\":\"VECTOR\",\"properties\":{\"icon\":{\"type\":\"STATIC\",\"options\":{\"value\":\"marker\"}},\"fillColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#DA8B45\"}},\"lineColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#c57127\"}},\"lineWidth\":{\"type\":\"STATIC\",\"options\":{\"size\":1}},\"iconSize\":{\"type\":\"STATIC\",\"options\":{\"size\":6}},\"iconOrientation\":{\"type\":\"STATIC\",\"options\":{\"orientation\":0}},\"labelText\":{\"type\":\"DYNAMIC\",\"options\":{\"field\":{\"label\":\"Available_bikes\",\"name\":\"Available_bikes\",\"origin\":\"source\",\"type\":\"number\",\"supportsAutoDomain\":true}}},\"labelColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#000000\"}},\"labelSize\":{\"type\":\"STATIC\",\"options\":{\"size\":14}},\"labelBorderColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#FFFFFF\"}},\"symbolizeAs\":{\"options\":{\"value\":\"icon\"}},\"labelBorderSize\":{\"options\":{\"size\":\"SMALL\"}}},\"isTimeAware\":true},\"type\":\"BLENDED_VECTOR\",\"joins\":[],\"query\":{\"query\":\"Places : 0\",\"language\":\"kuery\"}},{\"sourceDescriptor\":{\"geoField\":\"Position\",\"filterByMapBounds\":true,\"scalingType\":\"CLUSTERS\",\"topHitsSize\":1,\"id\":\"c5188387-c688-46f1-902a-7476f8e8c8a3\",\"type\":\"ES_SEARCH\",\"tooltipProperties\":[],\"sortField\":\"\",\"sortOrder\":\"desc\",\"indexPatternRefName\":\"layer_4_source_index_pattern\"},\"id\":\"770d0f46-c93c-4bff-8079-b2a16427abc1\",\"label\":null,\"minZoom\":0,\"maxZoom\":24,\"alpha\":0.75,\"visible\":true,\"style\":{\"type\":\"VECTOR\",\"properties\":{\"icon\":{\"type\":\"STATIC\",\"options\":{\"value\":\"marker-stroked\"}},\"fillColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#54B399\"}},\"lineColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#41937c\"}},\"lineWidth\":{\"type\":\"STATIC\",\"options\":{\"size\":1}},\"iconSize\":{\"type\":\"STATIC\",\"options\":{\"size\":6}},\"iconOrientation\":{\"type\":\"STATIC\",\"options\":{\"orientation\":0}},\"labelText\":{\"type\":\"DYNAMIC\",\"options\":{\"field\":{\"label\":\"Available_bikes\",\"name\":\"Available_bikes\",\"origin\":\"source\",\"type\":\"number\",\"supportsAutoDomain\":true}}},\"labelColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#000000\"}},\"labelSize\":{\"type\":\"STATIC\",\"options\":{\"size\":14}},\"labelBorderColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#FFFFFF\"}},\"symbolizeAs\":{\"options\":{\"value\":\"icon\"}},\"labelBorderSize\":{\"options\":{\"size\":\"SMALL\"}}},\"isTimeAware\":true},\"type\":\"BLENDED_VECTOR\",\"joins\":[],\"query\":{\"query\":\"Available_bikes > 0 and Full : false \",\"language\":\"kuery\"}},{\"sourceDescriptor\":{\"geoField\":\"Position\",\"filterByMapBounds\":true,\"scalingType\":\"CLUSTERS\",\"topHitsSize\":1,\"id\":\"dccd9172-4c51-4933-ade0-a62f277bd6ba\",\"type\":\"ES_SEARCH\",\"tooltipProperties\":[],\"sortField\":\"\",\"sortOrder\":\"desc\",\"indexPatternRefName\":\"layer_5_source_index_pattern\"},\"id\":\"f3d0936d-e1ca-4d93-b4d0-49db4de747ae\",\"label\":null,\"minZoom\":0,\"maxZoom\":24,\"alpha\":0.75,\"visible\":true,\"style\":{\"type\":\"VECTOR\",\"properties\":{\"icon\":{\"type\":\"STATIC\",\"options\":{\"value\":\"marker-stroked\"}},\"fillColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#b61818\"}},\"lineColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#c02e26\"}},\"lineWidth\":{\"type\":\"STATIC\",\"options\":{\"size\":1}},\"iconSize\":{\"type\":\"STATIC\",\"options\":{\"size\":6}},\"iconOrientation\":{\"type\":\"STATIC\",\"options\":{\"orientation\":0}},\"labelText\":{\"type\":\"DYNAMIC\",\"options\":{\"field\":{\"label\":\"Available_bikes\",\"name\":\"Available_bikes\",\"origin\":\"source\",\"type\":\"number\",\"supportsAutoDomain\":true}}},\"labelColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#000000\"}},\"labelSize\":{\"type\":\"STATIC\",\"options\":{\"size\":14}},\"labelBorderColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#FFFFFF\"}},\"symbolizeAs\":{\"options\":{\"value\":\"icon\"}},\"labelBorderSize\":{\"options\":{\"size\":\"SMALL\"}}},\"isTimeAware\":true},\"type\":\"BLENDED_VECTOR\",\"joins\":[],\"query\":{\"query\":\"Available_bikes : 0\",\"language\":\"kuery\"}},{\"sourceDescriptor\":{\"geoField\":\"Position\",\"filterByMapBounds\":true,\"scalingType\":\"CLUSTERS\",\"topHitsSize\":1,\"id\":\"e21b67a5-56ad-4e1d-a6e7-a76fa7f06edd\",\"type\":\"ES_SEARCH\",\"tooltipProperties\":[],\"sortField\":\"\",\"sortOrder\":\"desc\",\"indexPatternRefName\":\"layer_6_source_index_pattern\"},\"id\":\"99d9e558-a633-445f-8563-4a4177650d16\",\"label\":null,\"minZoom\":0,\"maxZoom\":24,\"alpha\":0.75,\"visible\":true,\"style\":{\"type\":\"VECTOR\",\"properties\":{\"icon\":{\"type\":\"STATIC\",\"options\":{\"value\":\"marker-stroked\"}},\"fillColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#DA8B45\"}},\"lineColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#c57127\"}},\"lineWidth\":{\"type\":\"STATIC\",\"options\":{\"size\":1}},\"iconSize\":{\"type\":\"STATIC\",\"options\":{\"size\":6}},\"iconOrientation\":{\"type\":\"STATIC\",\"options\":{\"orientation\":0}},\"labelText\":{\"type\":\"DYNAMIC\",\"options\":{\"field\":{\"label\":\"Available_bikes\",\"name\":\"Available_bikes\",\"origin\":\"source\",\"type\":\"number\",\"supportsAutoDomain\":true}}},\"labelColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#000000\"}},\"labelSize\":{\"type\":\"STATIC\",\"options\":{\"size\":14}},\"labelBorderColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#FFFFFF\"}},\"symbolizeAs\":{\"options\":{\"value\":\"icon\"}},\"labelBorderSize\":{\"options\":{\"size\":\"SMALL\"}}},\"isTimeAware\":true},\"type\":\"BLENDED_VECTOR\",\"joins\":[],\"query\":{\"query\":\"Full : true \",\"language\":\"kuery\"}}]",
+        "uiStateJSON": "{\"isLayerTOCOpen\":true,\"openTOCDetails\":[]}"
+      },
+      "references": [
+        {
+          "name": "layer_1_source_index_pattern",
+          "type": "index-pattern",
+          "id": "eb916900-63c3-11eb-97f1-c3c76196e867"
+        },
+        {
+          "name": "layer_2_source_index_pattern",
+          "type": "index-pattern",
+          "id": "eb916900-63c3-11eb-97f1-c3c76196e867"
+        },
+        {
+          "name": "layer_3_source_index_pattern",
+          "type": "index-pattern",
+          "id": "eb916900-63c3-11eb-97f1-c3c76196e867"
+        },
+        {
+          "name": "layer_4_source_index_pattern",
+          "type": "index-pattern",
+          "id": "d8ed7fb0-685e-11eb-9cdb-358efc8c25af"
+        },
+        {
+          "name": "layer_5_source_index_pattern",
+          "type": "index-pattern",
+          "id": "d8ed7fb0-685e-11eb-9cdb-358efc8c25af"
+        },
+        {
+          "name": "layer_6_source_index_pattern",
+          "type": "index-pattern",
+          "id": "d8ed7fb0-685e-11eb-9cdb-358efc8c25af"
+        }
+      ],
+      "migrationVersion": {
+        "map": "7.10.0"
+      }
+    },
+    {
+      "id": "eb916900-63c3-11eb-97f1-c3c76196e867",
+      "type": "index-pattern",
+      "namespaces": [
+        "default"
+      ],
+      "updated_at": "2021-01-31T12:57:48.687Z",
+      "version": "WzIyNzcsMTFd",
+      "attributes": {
+        "title": "velotoulouse-geo",
+        "fields": "[{\"count\":0,\"name\":\"Available_bikes\",\"type\":\"number\",\"esTypes\":[\"long\"],\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"count\":0,\"name\":\"Capacity\",\"type\":\"number\",\"esTypes\":[\"long\"],\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"count\":0,\"name\":\"Date\",\"type\":\"string\",\"esTypes\":[\"text\"],\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"count\":0,\"name\":\"Date.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"subType\":{\"multi\":{\"parent\":\"Date\"}}},{\"count\":0,\"name\":\"Last update\",\"type\":\"number\",\"esTypes\":[\"long\"],\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"count\":0,\"name\":\"Places\",\"type\":\"number\",\"esTypes\":[\"long\"],\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"count\":0,\"name\":\"Position\",\"type\":\"geo_point\",\"esTypes\":[\"geo_point\"],\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"count\":0,\"name\":\"Station\",\"type\":\"number\",\"esTypes\":[\"long\"],\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"count\":0,\"name\":\"Status\",\"type\":\"string\",\"esTypes\":[\"text\"],\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"count\":0,\"name\":\"Status.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"subType\":{\"multi\":{\"parent\":\"Status\"}}},{\"count\":0,\"name\":\"_id\",\"type\":\"string\",\"esTypes\":[\"_id\"],\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"count\":0,\"name\":\"_index\",\"type\":\"string\",\"esTypes\":[\"_index\"],\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"count\":0,\"name\":\"_score\",\"type\":\"number\",\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"count\":0,\"name\":\"_source\",\"type\":\"_source\",\"esTypes\":[\"_source\"],\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"count\":0,\"name\":\"_type\",\"type\":\"string\",\"esTypes\":[\"_type\"],\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false}]"
+      },
+      "references": [],
+      "migrationVersion": {
+        "index-pattern": "7.6.0"
+      }
+    },
+    {
+      "id": "d8ed7fb0-685e-11eb-9cdb-358efc8c25af",
+      "type": "index-pattern",
+      "namespaces": [
+        "default"
+      ],
+      "updated_at": "2021-02-06T09:36:54.059Z",
+      "version": "WzI4NDAsMTNd",
+      "attributes": {
+        "title": "velotoulouse-predictions",
+        "fields": "[{\"count\":0,\"name\":\"Available_bikes\",\"type\":\"number\",\"esTypes\":[\"long\"],\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"count\":0,\"name\":\"Capacity\",\"type\":\"number\",\"esTypes\":[\"long\"],\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"count\":0,\"name\":\"Full\",\"type\":\"boolean\",\"esTypes\":[\"boolean\"],\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"count\":0,\"name\":\"Position\",\"type\":\"geo_point\",\"esTypes\":[\"geo_point\"],\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"count\":0,\"name\":\"Station\",\"type\":\"number\",\"esTypes\":[\"long\"],\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"count\":0,\"name\":\"_id\",\"type\":\"string\",\"esTypes\":[\"_id\"],\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"count\":0,\"name\":\"_index\",\"type\":\"string\",\"esTypes\":[\"_index\"],\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"count\":0,\"name\":\"_score\",\"type\":\"number\",\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"count\":0,\"name\":\"_source\",\"type\":\"_source\",\"esTypes\":[\"_source\"],\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"count\":0,\"name\":\"_type\",\"type\":\"string\",\"esTypes\":[\"_type\"],\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false}]"
+      },
+      "references": [],
+      "migrationVersion": {
+        "index-pattern": "7.6.0"
+      }
+    }
+  ]
+}
