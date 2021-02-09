@@ -10,7 +10,7 @@
 
 ### Objectifs
 Le premier objectif de ce projet était de représenter, en temps réel, sur une carte, l'état des stations VélôToulouse en temps réel.
-Le second objectif était de retranscrire sur une carte l'état des stations dans 30 minutes grâce à un model "time-series" crée
+Le second objectif était de retranscrire sur une carte l'état des stations dans 30 minutes grâce à un model "time-series" créé
 grâce à la librairie Python *statsmodel*.
 
 <p align="center">
@@ -40,7 +40,7 @@ Après avoir installé les logiciels, il faut configurer quelques variables d'en
 
 Une fois que ces variables sont correctement configurées, il faut installer les dépendances Python du projet. Pour cela,
 il est fortement conseillé d'utiliser un environnement virtuel Python.
-Vous pouvez installer automatiquement toutes les dépedances à l'aide de la commande :
+Vous pouvez installer automatiquement toutes les dépendances à l'aide de la commande :
 ```
 pip install -r requirements.txt
 ```
@@ -59,8 +59,8 @@ Depuis cette API, nous utilisons deux producers Kafka différents :
 - Le premier (*Kafka real time*) va récupérer des données toutes les minutes de l’API en JSON et filtrer ces données sur la ville de Toulouse.
 - Le second (*Kafka predict*) va faire la même chose mais en s'actualisant toutes les 30 minutes.
 
-Nous voyons donc que le projet est vraiment distingué en deux branches : une pour afficher en temps réel et une pour prédire. 
-Cette architecture est répectée dans le code puisqu'il existe deux répertoire *real_time* et *predictions* qui contiennent 
+Nous voyons que le projet est vraiment séparé en deux branches : une pour afficher en temps réel et une pour prédire. 
+Cette architecture est respectée dans le code puisqu'il existe deux répertoires *real_time* et *predictions* qui contiennent 
 les fichiers permettant "d'utiliser une branche" indépendamment de l'autre.
 
 ### Producers
@@ -78,7 +78,7 @@ Une fois que c'est fait, nous allons créer les topics pour récupérer les reco
 ./bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic velopredict
 ```
 
-Pour lancer ces les deux producers, vous pouvez taper les commandes suivantes (en supposant que vous êtes à la racine du projet 
+Pour lancer les deux producers, vous pouvez taper les commandes suivantes (en supposant que vous êtes à la racine du projet 
 et que vous utilisez notre clé API) :
 ```
 python real_time/call_apy.py      # pour l'application en temps réel
@@ -102,7 +102,7 @@ spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.4.4 --
 Nous récupérons alors nos données dans Elastic Search à l'index : "*velotoulouse-geo*". Il est fortement conseillé d'utiliser 
 l'extension *ElasticVue* d'ElasticSearch pour pouvoir visualiser les données. 
 
-**Visulation**
+**Visualisation**
 
 Pour pouvoir visualiser dans Kibana, il faut tout d'abord créer un template en JSON pour pouvoir mapper la variable "Position" 
 au type "geo-point" :
