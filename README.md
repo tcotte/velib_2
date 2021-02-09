@@ -1,4 +1,52 @@
-# Velib
+# VélôToulouse
+
+### Objectifs
+Le premier jectif de ce projet était de représenter, en temps réel, sur une carte, l'état des stations VélôToulouse en temps réel.
+Le second objectif était de retranscrire sur une carte l'état des stations dans 30 minutes grâce à un model "time-series" crée
+grâce à la librairie Python *statsmodel*.
+
+<p align="center">
+  <img src="images/VeloToulouse.PNG" width="350" title="hover text">
+</p>
+
+### Logiciels requis
+
+Pour pouvoir utiliser ce projet, les installations de quelques logiciels sont nécessaires :
+- Kafka
+- Spark
+- Hadoop
+- Kibana X.X.X
+- ElasticSearch X.X.X
+- elasticsearch-hadoop-X.X.X.jar
+
+Les "X" sont les numéros de version, ils doivent être similaires pour Kibana, ElasticSearch et le jar complémentaire qui permettra
+d'envoyer nos données depuis Spark dans Elastic Search.
+
+### Configuration des variables d'environnement
+
+Après avoir installé les logiciels, il faut configurer quelques variables d'environnement dans le *~/.bashrc* :
+- SPARK_HOME
+- HADOOP_HOME
+- PYTHONPATH
+- PYSPARK_PYTHON
+
+Une fois que ces variables sont correctement configurées, il faut installer les dépendances Python du projet. Pour cela,
+il est fortement conseillé d'utiliser un environnement virtuel Python.
+Vous pouvez installer automatiquement toutes les dépedances à l'aide de la commande :
+```
+pip install -r requirements.txt
+```
+
+
+Maintenant que les installations sont réalisées nous allons poursuivre en expliquant brièvement le projet.
+
+### Architecture du projet
+
+<p align="center">
+  <img src="images/VeloToulouse.PNG" width="550" title="hover text">
+</p>
+
+
 
 ### Notes pour le CSV
 
@@ -51,8 +99,6 @@ ar prediction.py
 ```
 
 
-<p align="center">
-  <img src="images/VeloToulouse.PNG" width="350" title="hover text">
-</p>
+
 
 
