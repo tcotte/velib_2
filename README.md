@@ -9,7 +9,7 @@
 ---
 
 ### Objectifs
-Le premier jectif de ce projet était de représenter, en temps réel, sur une carte, l'état des stations VélôToulouse en temps réel.
+Le premier objectif de ce projet était de représenter, en temps réel, sur une carte, l'état des stations VélôToulouse en temps réel.
 Le second objectif était de retranscrire sur une carte l'état des stations dans 30 minutes grâce à un model "time-series" crée
 grâce à la librairie Python *statsmodel*.
 
