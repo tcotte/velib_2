@@ -1,6 +1,7 @@
-<img src="https://can7.fr/images/inp-enseeiht.jpg" width=200, style="max-width: 110px; display: inline" alt="Python"/>
-<img src="https://projet3.roxanerg.com/images/logo/logo.png" width=100 style="max-width: 100px; display: inline" alt="TensorFlow"/>
-
+<div class="align-center" style="text-align: center; margin: auto;">
+<img src="https://can7.fr/images/inp-enseeiht.jpg" width=300, style="max-width: 110px; display: inline" alt="N7"/>
+<img src="https://projet3.roxanerg.com/images/logo/logo.png" width=200 style="max-width: 100px; display: inline" alt="Velotoulouse"/>
+</div>
 # VélôToulouse
 ---
 ### Objectifs
