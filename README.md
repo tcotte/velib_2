@@ -43,7 +43,7 @@ Maintenant que les installations sont réalisées nous allons poursuivre en expl
 ### Architecture du projet
 
 <p align="center">
-  <img src="images/graph_application.png" width="550" title="hover text">
+  <img src="images/graph_application.png" width="750" title="hover text">
 </p>
 
 
