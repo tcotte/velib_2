@@ -176,7 +176,7 @@ dans 30 minutes.
 <br>
 
 <p align="center">
-  <img src="images/dashboard_count.PNG" width="850" title="hover text">
+  <img src="images/dashboard_count.PNG" width="1000" title="hover text">
 </p>
 
 
