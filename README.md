@@ -56,4 +56,3 @@ ar prediction.py
 </p>
 
 
-![picture](images/VeloToulouse.PNG)
