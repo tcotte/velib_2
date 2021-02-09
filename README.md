@@ -80,7 +80,7 @@ python predictions/producer_predict.py      # pour l'application de prédiction
 ### Application en temps réel
 
 <p align="center">
-  <img src="images/application_real_time.png" width="450" title="hover text">
+  <img src="images/application_real_time.png" width="250" title="hover text">
 </p>
 
 Maintenant que le producer est activé, nous allons utiliser l'application Spark Streaming pour pouvoir envoyer les données 
@@ -95,7 +95,6 @@ Nous récupérons alors nos données dans Elastic Search à l'index : "*velotoul
 l'extension *ElasticVue* d'ElasticSearch pour pouvoir visualiser les données. 
 
 **Visulation**
----
 
 Pour pouvoir visualiser dans Kibana, il faut tout d'abord créer un template en JSON pour pouvoir mapper la variable "Position" 
 au type "geo-point" :
@@ -122,9 +121,10 @@ mappée au type "geo-point".
 <p align="center">
   <img src="images/application_prediction.png" width="650" title="hover text">
 </p>
+Les blocs de cette application sont détaillés plus bas.
 
 **Window**
----
+
 Une fois le producer *producer_predict.py* lancé, il faut lancer le fichier *kafka_to_df.py* qui va récupérer les données
 fenétrées toutes les 5h à un interval de temps de 30 minutes (donc 10 échantillons par stations). La fenêtre créée grâce 
 à Spark streaming a un pas de temps de 30 min.
@@ -140,7 +140,7 @@ spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.4.4 pr
 ```
 
 **Prediction**
----
+
 Maintenant que la window est créée, nous allons pouvoir loader le model précédemment entraîné avec des données récoltées 
 pendant deux semaines (rien ne vous empêche de réentraîner le model grâce au fichier *learning.py*). Ce model va retourner
 la liste de la quantité de vélos disponibles par station dans 30 minutes. Cette liste ainsi que des informations complémentaires
@@ -153,7 +153,7 @@ spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.4.4 --
 ```
 
 **Visualisation**
----
+
 Maintenant que les données sont envoyées toutes les 30 minutes dans ElasticSearch, nous avons à créer un template pour visualiser
 les stations sur la carte proposée par Kibana. Nous avons à réecrire le JSON précédent en changeant l'index pattern par le nouvel 
 index : "*velotoulouse-predictions*".
@@ -165,8 +165,9 @@ qui sont pleines et vides. Nous vous proposons ces dashboards qui se raffraîchi
 dans le dossier "dashboards". Vous n'avez plus qu'à les importer dans Kibana et visualiser quel vélo vous pourrez prendre 
 dans 30 minutes.
 <br>
+
 <p align="center">
-  <img src="images/dashboard_count.PNG" width="650" title="hover text">
+  <img src="images/dashboard_count.PNG" width="850" title="hover text">
 </p>
 
 
