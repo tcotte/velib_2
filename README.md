@@ -1,4 +1,4 @@
-<img src="https://can7.fr/images/inp-enseeiht.jpg" width=350, style="max-width: 110px; display: inline" alt="Python"/>
+<img src="https://can7.fr/images/inp-enseeiht.jpg" width=300, style="max-width: 110px; display: inline" alt="Python"/>
 <img src="https://projet3.roxanerg.com/images/logo/logo.png" width=150 style="max-width: 40px; display: inline" alt="TensorFlow"/>
 
 # VélôToulouse
